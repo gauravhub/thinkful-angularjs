@@ -1,0 +1,7 @@
+<div class="row">
+	<div ng-transclude></div>
+	<span ng-repeat="(index, day) in days">
+		<div class="calendarDay" ng-class="excludeDayClass(day.date)">{{day.day}}</div>
+		<div class="clear" ng-show="(index+1)%7==0"></div>
+	</span>
+</div> 

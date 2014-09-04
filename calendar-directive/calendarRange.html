@@ -1,0 +1,7 @@
+<div>
+    <select ng-model="selectedMonth" id="selectMonth"
+            ng-options="month.text for month in months track by month.value"></select>
+    <select ng-model="selectedYear" id="selectYear"
+            ng-options="year for year in years track by year"></select>
+	<hr />
+</div>

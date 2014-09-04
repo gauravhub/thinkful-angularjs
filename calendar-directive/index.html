@@ -1,0 +1,29 @@
+<html ng-app="calendarDirectiveApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Calendar Directive Demo</title>
+	<link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./style.css">	
+</head>
+<body>
+	<header class="container">
+		<div class="navbar navbar-default navbar-fixed-top navbar-custom-center">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<h3 class="logo">Calendar Directive Demo</h3>
+				</div>
+			</div>
+		</div>
+	</header>	
+	<div class="container">
+		<calendar>
+			<calendar-range year="2010" month="1"></calendar-range>
+		</calendar>
+	</div>
+	<script src="./bower_components/jquery/dist/jquery.js"></script>
+	<script src="./bower_components/angular/angular.js"></script>
+	<script src="./bower_components/angular-mocks/angular-mocks.js"></script>
+	<script type="text/javascript" src="calendar-range.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+</body>
+</html>

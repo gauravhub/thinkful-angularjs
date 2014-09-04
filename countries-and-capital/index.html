@@ -1,0 +1,17 @@
+<html ng-app="countires-and-capitals-app">
+	<head>
+		<meta charset="UTF-8">
+		<title>Countries & Capitals App</title>
+		<link rel="stylesheet" href="./_assets/combined.css"/>
+	</head>
+	<body ng-class="{loading: isLoading}">
+
+		<div ng-include="'./nav/nav.html'"></div>
+
+		<div class="animate-view-container container">
+		    <div ng-view class="animate-view"></div>
+		</div>
+
+		<script src="./_assets/combined.js"></script>
+	</body>
+</html>

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en" ng-app='myApp'>
+<head>
+  <meta charset="UTF-8">
+  <title>Multiplication Table</title>
+  <link rel="stylesheet" type="text/css" href="./main.css">
+</head>
+<body>
+  <div ng-controller="DisplayCtrl">
+    <div ng-if="content">The value you have selected to display is: {{ content }}</div>
+    <div ng-if="!content">You have not selected a value to display</div>
+  </div>
+  <div ng-controller="MultiplicationCtrl" initial-number-limit="10">
+    <input type="number" ng-model="numberLimit" placeholder="Enter a number">
+    <table>
+      <tr ng-repeat="numberA in numbers">
+        <td 
+          ng-repeat="numberB in numbers"
+          ng-mouseover="setActiveFactors(numberA, numberB)"
+          ng-mouseleave="clearActiveFactors()"
+          ng-click="setActiveNumber(compute(numberA, numberB))"
+          ng-class="{hover: matchActiveFactors(numberA, numberB)}">
+          {{ compute(numberA, numberB) }}
+        </td>
+      </tr>
+    </table>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js" type="text/javascript"></script>
+  <script src="./myApp.js" type="text/javascript"></script>
+</body>
+</html>

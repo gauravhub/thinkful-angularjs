@@ -1,0 +1,45 @@
+<ol class="breadcrumb">
+  <li><a href="#/">Home</a></li>
+  <li><a href="#/countries">Countries</a></li>
+  <li class="active">{{countryName}}</li>
+</ol>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h1 class="panel-title">{{countryName}}</h1>
+    </div>
+    <div class="panel-body">
+		<div class="row">
+			<div class="col-md-6 text-right"><b>Population of Country : </b></div>
+			<div class="col-md-6">{{populationOfCountry | number}}</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6 text-right"><b>Area : </b></div>
+			<div class="col-md-6">{{area | number}}</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6 text-right"><b>Capital : </b></div>
+			<div class="col-md-6">{{capitalName}}</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6 text-right"><b>Population of Capital : </b></div>
+			<div class="col-md-6">{{populationOfCapital | number}}</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6 text-right"><b>{{ neighbors.length }} neighbors : </b></div>
+			<div class="col-md-6">
+				<span ng-repeat="neighbor in neighbors">
+					<a ng-href="#/countries/{{neighbor.countryCode}}">{{neighbor.countryName}}</a>
+					&nbsp;&nbsp;
+				</span>
+			</div>
+		</div>
+ 		<div class="row">
+			<div class="col-md-6">
+				<img width="200" ng-src="http://www.geonames.org/img/country/250/{{countryCode}}.png" class="img-responsive pull-right" />
+			</div>
+			<div class="col-md-6">
+				<img width="200" ng-src="http://www.geonames.org/flags/x/{{countryCode | lowercase}}.gif" class="img-responsive pull-left" />
+			</div>
+		</div>
+    </div>
+</div>

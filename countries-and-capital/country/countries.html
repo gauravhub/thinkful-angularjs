@@ -1,0 +1,63 @@
+<ol class="breadcrumb">
+  <li><a href="#/">Home</a></li>
+  <li class="active">Countries</li>
+</ol>
+<table tr-ng-grid selection-mode="None" items="geonames" page-items="10">
+    <thead>
+        <tr>
+            <th field-name="countryName" width="30%">
+                <div class="tr-ng-title">
+                    Name
+                    <div tr-ng-grid-column-sort=""></div>
+                </div>
+            </th>
+            <th field-name="countryCode" width="10%">
+                <div class="tr-ng-title">
+                    Country Code
+                    <div tr-ng-grid-column-sort=""></div>
+                </div>
+            </th>
+            <th field-name="capital" width="20%">
+                <div class="tr-ng-title">
+                    Capital
+                    <div tr-ng-grid-column-sort=""></div>
+                </div>
+            </th>
+            <th field-name="continent" width="10%">
+                <div class="tr-ng-title">
+                    Continent
+                    <div tr-ng-grid-column-sort=""></div>
+                </div>
+            </th>
+            <th field-name="areaInSqKm" width="15%">
+                <div class="tr-ng-title">
+                    Area (km<sup>2</sup>)
+                </div>
+            </th>
+            <th field-name="population" width="15%">
+                <div class="tr-ng-title">
+                    Population
+                </div>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+	    <tr>
+	        <td field-name="countryName"><a ng-href="#/countries/{{gridItem.countryCode}}">{{ gridItem.countryName }}</a></td>
+	        <td field-name="countryCode"></td>
+	        <td field-name="capital"></td>
+	        <td field-name="continent"></td>
+	        <td field-name="areaInSqKm" class="areaInSqKm">{{ gridItem.areaInSqKm | number }}</td>
+	        <td field-name="population" class="population">{{ gridItem.population | number }}</td>
+	    </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="6">
+                <form class="form-inline tr-ng-grid-footer">
+                    <div tr-ng-grid-pager></div>
+                </form>
+            </td>
+        </tr>
+    </tfoot>
+</table>

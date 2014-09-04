@@ -1,0 +1,77 @@
+<div ng-controller="MealDetailsCtrl">
+	<form ng-submit="submitMealDetails()" name="mealDetailsForm" novalidate>
+		<div id="meal-details-container">
+			<h4>Enter meal details</h4>
+			<div id="meal-details">
+				<div class="row">
+					<div class="column align-right">
+						Base Meal Price: $
+					</div>
+					<div class="column align-left">
+					  	<input type="number" placeholder="Enter base price" name="baseMealPrice" ng-model="meal.baseMealPrice" required ng-class="{requiredInput: submitted && mealDetailsForm.baseMealPrice.$error.required}" >
+					</div>
+					<div class="clear-both"></div>
+				</div>
+				<div class="row">
+					<div class="column align-right">
+						Tax Rate: %
+					</div>
+					<div class="column align-left">
+					  	<input type="number" placeholder="Enter tax rate" name="taxRate" ng-model="meal.taxRate" required ng-class="{requiredInput: submitted && mealDetailsForm.taxRate.$error.required}" >
+					</div>
+					<div class="clear-both"></div>
+				</div>
+				<div class="row">
+					<div class="column align-right">
+						Tip Percentage: %
+					</div>
+					<div class="column align-left">
+					  	<input type="number" placeholder="Enter tip %" name="tipPercentage" ng-model="meal.tipPercentage" required ng-class="{requiredInput: submitted && mealDetailsForm.tipPercentage.$error.required}" >
+					</div>
+					<div class="clear-both"></div>
+				</div>
+				<div class="row">
+					<div class="column align-right">
+						<input type="submit" value="Submit">
+					</div>
+					<div class="column align-left">
+						<input type="button" value="Cancel" ng-click="reset()">
+					</div>
+					<div class="clear-both"></div>
+				</div>
+			</div>
+		</div>
+	</form>
+	<div id="customer-charges-container">
+		<h4>Customer Charges</h4>
+		<div id="customer-charges">
+			<div class="row">
+				<div class="column align-right">
+					Sub total:  
+				</div>
+				<div class="column align-left">
+					<span>{{customerCharges.subTotal | number:2}}</span>
+				</div>
+				<div class="clear-both"></div>
+			</div>
+			<div class="row">
+				<div class="column align-right">
+					Tip:
+				</div>
+				<div class="column align-left">
+					<span>{{customerCharges.tip | number:2}}</span>
+				</div>
+				<div class="clear-both"></div>
+			</div>
+			<div class="row">
+				<div class="column align-right">
+					<b>Total:</b>
+				</div>
+				<div class="column align-left">
+					<b><span>{{customerCharges.total | number:2}}</span></b>
+				</div>
+				<div class="clear-both"></div>
+			</div>
+		</div>	
+	</div>
+</div>

@@ -1,0 +1,192 @@
+body {
+	font-family: "Comic Sans MS";
+    margin: 10px auto;
+    width: 800px;
+    height: 600px;
+}
+
+input {
+	font-family: "Comic Sans MS";
+}
+
+header {
+	height: 200px;
+	width: 800px;
+	border: 2px solid silver;
+	padding: 20px
+}
+
+.requiredInput {
+    background-color: #ffdddd;
+}
+
+#logo {
+	height: 200px;
+	width: 300px;
+	float: left;
+}
+
+#description {
+	height: 200px;
+	width: 500px;
+	float: left;
+	text-align: center;
+	font-size: 18px;
+}
+
+#animationContainer {
+	position: relative;
+}
+
+#words {
+	height: 250px;
+	width: 800px;
+}
+
+#words-container {
+	height: 300px;
+	width: 800px;
+	border-width: 0px 2px 2px 2px;
+	border-style: solid;
+	border-color: silver;
+	padding: 20px;
+	position: absolute;
+}
+
+#madLib {
+	height: 150px;
+	width: 800px;
+}
+
+#madLib-container {
+	height: 200px;
+	width: 800px;
+	clear: both;
+	border-width: 0px 2px 2px 2px;
+	border-style: solid;
+	border-color: silver;
+	padding: 20px;
+	font-family: "Verdana";	
+	position: absolute;
+}
+
+.row {
+	clear: both;
+}
+
+.column {
+	float: left; 
+	width: 30%;
+	padding: 5px;
+}
+
+#words-container.ng-hide-remove, 
+#madLib-container.ng-hide-remove,
+#words-container.ng-hide-add, 
+#madLib-container.ng-hide-add {	
+  	display:block!important;
+}
+
+#words-container.ng-hide-add, 
+#madLib-container.ng-hide-add {
+  -webkit-animation:3s hide cubic-bezier(0.355, -0.600, 0.250, 1.650);
+  -moz-animation:3s hide cubic-bezier(0.355, -0.600, 0.250, 1.650);
+  -o-animation:3s hide cubic-bezier(0.355, -0.600, 0.250, 1.650);
+  animation:3s hide cubic-bezier(0.355, -0.600, 0.250, 1.650);
+}
+
+@-webkit-keyframes hide {
+  	from { 
+  		-webkit-transform: scale(1,1);
+  		opacity:1; 
+	}
+ 	to { 
+ 		-webkit-transform: scale(0,0);
+ 		opacity:0;
+ 	}
+}
+
+@-moz-keyframes hide {
+  	from { 
+  		-moz-transform: scale(1,1);
+  		opacity:1; 
+	}
+ 	to { 
+ 		-moz-transform: scale(0,0);
+ 		opacity:0;
+ 	}
+}
+
+@-o-keyframes hide {
+  	from { 
+  		-o-transform: scale(1,1);
+  		opacity:1; 
+	}
+ 	to { 
+ 		-o-transform: scale(0,0);
+ 		opacity:0;
+ 	}
+}
+
+@keyframes hide {
+  	from { 
+		transform: scale(1,1);
+ 		opacity:1;  
+	}
+ 	to { 
+		transform: scale(0,0);
+  		opacity:0; 
+ 	}
+}
+
+#words-container.ng-hide-remove, 
+#madLib-container.ng-hide-remove {
+  -webkit-animation:3s show cubic-bezier(0.355, -0.600, 0.250, 1.650);
+  -moz-animation:3s show cubic-bezier(0.355, -0.600, 0.250, 1.650);
+  -o-animation:3s show cubic-bezier(0.355, -0.600, 0.250, 1.650);
+  animation:3s show cubic-bezier(0.355, -0.600, 0.250, 1.650);
+}
+
+@-webkit-keyframes show {
+  	from { 
+ 		-webkit-transform: scale(0,0) rotate(0deg);
+ 		opacity:0; 
+	}
+ 	to { 
+  		-webkit-transform: scale(1,1) rotate(1800deg);
+ 		opacity:1; 
+ 	}
+}
+
+@-moz-keyframes show {
+  	from { 
+ 		-moz-transform: scale(0,0) rotate(0deg);
+ 		opacity:0; 
+	}
+ 	to { 
+  		-moz-transform: scale(1,1) rotate(1800deg);
+ 		opacity:1; 
+ 	}
+}
+
+@-o-keyframes show {
+  	from { 
+ 		-o-transform: scale(0,0) rotate(0deg);
+ 		opacity:0; 
+	}
+ 	to { 
+  		-o-transform: scale(1,1) rotate(1800deg);
+ 		opacity:1; 
+ 	}
+}
+
+@keyframes show {
+  	from { 
+		transform: scale(0,0) rotate(0deg);
+  		opacity:0; 
+	}
+ 	to { 
+		transform: scale(1,1) rotate(1800deg);
+   		opacity:1; 
+ 	}
+}

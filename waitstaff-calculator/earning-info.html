@@ -1,0 +1,34 @@
+<div id="earning-info-container" ng-controller="EarningInfoCtrl">
+	<h4>My Earning Info</h4>
+	<div id="earning-info">
+		<div class="row">
+			<div class="column align-right">
+				Tip total:
+			</div>
+			<div class="column align-left">
+				<span>{{earningInfo.tipTotal | number:2}}</span>
+			</div>
+			<div class="clear-both"></div>
+		</div>
+		<div class="row">
+			<div class="column align-right">
+				Meal count:
+			</div>
+			<div class="column align-left">
+				<span>{{earningInfo.mealCount}}</span>
+			</div>
+			<div class="clear-both"></div>
+		</div>
+		<div class="row">
+			<div class="column align-right">
+				Average tip per meal:
+			</div>
+			<div class="column align-left">
+				<span>{{earningInfo.tipPerMeal | number:2}}</span>
+			</div>
+			<div class="clear-both"></div>
+		</div>
+		<div class="row align-right">
+			<input type="button" value="Reset" ng-click="reset()">
+		</div>
+</div>

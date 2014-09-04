@@ -1,0 +1,38 @@
+body {
+	font-family: "Comic Sans MS";
+}
+
+input {
+	font-family: "Comic Sans MS";
+}
+
+td {
+	padding: 5px;
+}
+
+#mainContainer {
+    width: 600px;
+    height: 300px;
+    margin: 100px auto;
+    background-color: #eeeeee;
+}
+
+#header {
+	text-align: center;
+	padding: 10px;
+}
+
+#inputs table {
+    margin-left: 180px;	
+}
+
+#resultContainer {
+	text-align: center;
+	padding: 10px;
+	font-size: 24px;
+}
+
+.error {
+	color: red;
+}
+

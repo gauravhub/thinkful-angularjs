@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en" ng-app="madLibsApp">
+	<head>
+		<meta charset="UTF-8">
+		<title>ngMadLibs</title>
+		<link rel="stylesheet" href="./style.css">
+	</head>
+	<body>
+		<div id="mainContainer" ng-controller="madLibsController">
+			<header>
+				<div id="logo">
+					<img src="./images/mad-lib-happy-face.png">
+				</div>
+				<div id="description">
+					<img src="./images/ng-mad-libs-logo.png">
+					<h1>Automate This!</h1>
+				</div>
+			</header>
+			<div id="animationContainer">
+				<div id="words-container" ng-show="showWords">
+					<form ng-submit="generateMadLib()" name="wordsForm" novalidate>
+						<div id="words">
+							<div>
+								<span>Select Gender: </span>
+				                <input type="radio" name="gender" value="male" ng-model="gender" ng-change="updateName()">Male
+				                <input type="radio" name="gender" value="female" ng-model="gender" ng-change="updateName()"/>Female
+					        </div>
+			        		<h2>Provide the following words:</h2>
+							<div class="row">
+							  <div class="column">
+							  	<input type="text" placeholder="{{namePlaceholder}}" name="name" ng-model="name" required ng-class="{requiredInput: submitted && wordsForm.name.$error.required}">
+							  </div>
+							  <div class="column">
+							  	<input type="text" placeholder="dirty task" name="dirty_task" ng-model="dirty_task" required ng-class="{requiredInput: submitted && wordsForm.dirty_task.$error.required}">
+							  </div>
+							  <div class="column">
+							  	<input type="text" placeholder="obnoxious celebrity" name="obnoxious_celebrity" ng-model="obnoxious_celebrity" required ng-class="{requiredInput: submitted && wordsForm.obnoxious_celebrity.$error.required}">
+							  </div>
+							</div>
+							<div class="row">
+							  <div class="column">
+							  	<input type="text" placeholder="job title" name="job_title" ng-model="job_title" required ng-class="{requiredInput: submitted && wordsForm.job_title.$error.required}">
+							  </div>
+							  <div class="column">
+							  	<input type="text" placeholder="celebrity" name="celebrity" ng-model="celebrity" required ng-class="{requiredInput: submitted && wordsForm.celebrity.$error.required}">
+							  </div>
+							  <div class="column">
+							  	<input type="number" placeholder="huge number" name="huge_number" ng-model="huge_number" required required ng-class="{requiredInput: submitted && wordsForm.huge_number.$error.required}" >
+							  </div>
+							</div>			
+							<div class="row">
+							  <div class="column">
+							  	<input type="text" placeholder="tedious task" name="tedious_task" ng-model="tedious_task" required ng-class="{requiredInput: submitted && wordsForm.tedious_task.$error.required}">
+							  </div>
+							  <div class="column">
+							  	<input type="text" placeholder="useless skill" name="useless_skill" ng-model="useless_skill" required ng-class="{requiredInput: submitted && wordsForm.useless_skill.$error.required}">
+							  </div>
+							  <div class="column">
+							  	<input type="text" placeholder="adjective" name="adjective" ng-model="adjective" required ng-class="{requiredInput: submitted && wordsForm.adjective.$error.required}">
+							  </div>
+							</div>
+						</div>
+						<hr />
+						<div align="right">
+							<input type="submit"  value="Generate my MadLib" />
+						</div>
+					</form>
+				</div>
+				<div id="madLib-container" ng-hide="showWords">
+					<div id="madLib">
+						<p>
+							<u>{{name}}</u> was a <u>{{job_title}}</u> who loved technology. Although {{ he_or_she() }} loved parts of {{ his_or_her() }} job, {{ he_or_she() }} absolutely hated <u>{{tedious_task}}</u> and <u>{{dirty_task}}</u>. So <u>{{name}}</u>, met with {{ his_or_her() }} life mentor <u>{{celebrity}}</u> who told {{ him_or_her() }} to learn how to <u>{{useless_skill}}</u> with Thinkful. Thinkful didn't offer a course on <u>{{useless_skill}}</u> so {{ he_or_she() }} studied progromming instead.
+						</p>
+						<p>
+							What a great decision! With {{ his_or_her() }} new skills, <u>{{name}}</u> built a(n) <u>{{adjective}}</u> robot named <u>{{obnoxious_celebrity}}</u> that not only loved <u>{{obnoxious_celebrity}}</u> but did it <u>{{huge_number}}</u> faster.
+						</p>
+					</div>
+					<div align="right">
+						<input type="submit"  value="Start Over" ng-click="reset()" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src=	"//code.jquery.com/jquery-latest.min.js"></script>
+	<script type="text/javascript" src="https://code.angularjs.org/1.2.15/angular.js"></script>
+	<script type="text/javascript" src="https://code.angularjs.org/1.2.15/angular-animate.js"></script>
+	<script type="text/javascript" src="./app.js"></script>
+	<script type="text/javascript">
+		$(function() {
+				$('div.column > input').click(function() {
+				$(this).select();
+			});
+		});
+	</script>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Arithmetic Operations</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div>
+		<div id="mainContainer">
+			<div id="header">
+				<h1>Adder / Subtractor</h1>
+			</div>
+			<div id="inputs">
+				<table>
+					<tr>
+						<td>X = </td>
+						<td><input type="text" id="numX" value="Enter a number" /></td>
+						<td><span id="numXErrorMessage" class="error" /></td>
+					</tr>
+					<tr>
+						<td>Y = </td>
+						<td><input type="text" id="numY" value="Enter a number" /></td>
+						<td><span id="numYErrorMessage" class="error" /></td>
+					</tr>
+					<tr>
+						<td colspan="2" align="center">
+							<input type="button" id="opAdd" value="+" />
+							<input type="button" id="opSubtract" value="-" />
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div id="resultContainer">
+				<span id="result"></span>
+			</div>
+		</div>
+	<div>
+	<script type="text/javascript" src=	"http://code.jquery.com/jquery-latest.min.js"></script>
+	<script type="text/javascript" src=	"arithemetic.js"></script>
+</body>
+</html>
